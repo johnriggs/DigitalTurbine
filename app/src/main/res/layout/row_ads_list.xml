@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ad_name_underscore"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/ad_rating_title"
                 android:layout_width="wrap_content"
@@ -74,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ad_rating_parent"
-            android:gravity="left"
+            android:gravity="start"
             android:textSize="@dimen/ads_row_description"
             android:textColor="@color/row_description_text"/>
 

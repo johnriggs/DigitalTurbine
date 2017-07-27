@@ -8,4 +8,5 @@ import com.johnriggs.digitalturbine.horizontal.base.view.BaseView;
 
 public interface DetailsView extends BaseView {
     void setupAdsRecyclerView();
+    void showToast(String message);
 }

@@ -1,6 +1,8 @@
 package com.johnriggs.digitalturbine.vertical.details.repository;
 
 import com.google.gson.Gson;
+import com.johnriggs.digitalturbine.R;
+import com.johnriggs.digitalturbine.horizontal.application.DTApp;
 import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImpl;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
 
@@ -30,5 +32,10 @@ public class DetailsRepositoryImpl extends BaseRepositoryImpl implements Details
         }
 
         return jsonString;
+    }
+
+    @Override
+    public String getJsonParseErrorMessage() {
+        return DTApp.getApp().getResources().getString(R.string.json_parse_error);
     }
 }

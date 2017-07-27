@@ -1,6 +1,5 @@
 package com.johnriggs.digitalturbine.horizontal.utils;
 
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
@@ -17,10 +16,12 @@ import java.util.List;
  */
 
 public class JsonToListHelper {
+    public static final String TAG = "JSON_HELPER";
+
     public static List<DetailItem> getDetailItemsFromJson(String jsonString) throws JSONException {
         List<DetailItem> items = new ArrayList<>();
 
-        JSONObject jsonObject = null;
+        JSONObject jsonObject;
         try {
             jsonObject = new JSONObject(jsonString);
             Iterator<String> iterator = jsonObject.keys();
@@ -29,7 +30,7 @@ public class JsonToListHelper {
                 String key = iterator.next();
                 Object obj = jsonObject.get(key);
 
-                String value = null;
+                String value;
                 if (obj instanceof String){
                     value = (String) obj;
                 } else {
@@ -40,7 +41,7 @@ public class JsonToListHelper {
             }
 
         } catch (JSONException e){
-            Log.d("JSON_ERROR", e.getMessage());
+            Log.d(TAG, e.getMessage());
         }
 
         return items;

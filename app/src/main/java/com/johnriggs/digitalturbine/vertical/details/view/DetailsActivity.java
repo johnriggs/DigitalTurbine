@@ -8,9 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.johnriggs.digitalturbine.R;
+import com.johnriggs.digitalturbine.horizontal.application.DTApp;
 import com.johnriggs.digitalturbine.horizontal.base.view.BaseActivity;
 import com.johnriggs.digitalturbine.horizontal.utils.Constants;
-import com.johnriggs.digitalturbine.vertical.ads.view.AdsListAdapter;
 import com.johnriggs.digitalturbine.vertical.details.presenter.DetailsPresenter;
 import com.johnriggs.digitalturbine.vertical.details.presenter.DetailsPresenterImpl;
 import com.johnriggs.digitalturbine.vertical.details.repository.DetailsRepositoryImpl;
@@ -51,5 +51,10 @@ public class DetailsActivity extends BaseActivity implements DetailsView {
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this, OrientationHelper.VERTICAL, false));
         detailsListAdapter = new DetailsListAdapter(this, presenter);
         detailsRecyclerView.setAdapter(detailsListAdapter);
+    }
+
+    @Override
+    public void showToast(String message) {
+        Toast.makeText(DTApp.getApp(), message, Toast.LENGTH_SHORT).show();
     }
 }

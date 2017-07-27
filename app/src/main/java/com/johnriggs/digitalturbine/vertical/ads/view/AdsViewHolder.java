@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.johnriggs.digitalturbine.R;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
-import com.johnriggs.digitalturbine.horizontal.model.Ads;
 import com.johnriggs.digitalturbine.vertical.ads.presenter.AdsPresenter;
 import com.squareup.picasso.Picasso;
 

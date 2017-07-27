@@ -1,8 +1,5 @@
 package com.johnriggs.digitalturbine.vertical.details.presenter;
 
-import android.widget.Toast;
-
-import com.johnriggs.digitalturbine.horizontal.application.DTApp;
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
 import com.johnriggs.digitalturbine.horizontal.utils.JsonToListHelper;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
@@ -32,8 +29,6 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
     @Override
     public void setView(DetailsView view) {
         this.view = view;
-
-        initializeViews();
     }
 
     @Override
@@ -43,7 +38,7 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
         try {
             items = JsonToListHelper.getDetailItemsFromJson(repo.getJsonFromAd(appId));
         } catch (JSONException e){
-            Toast.makeText(DTApp.getApp(), "There was an error parsing the data for this item", Toast.LENGTH_SHORT).show();
+            view.showToast(repo.getJsonParseErrorMessage());
         }
 
         if (items != null){
@@ -54,9 +49,5 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
     @Override
     public List<DetailItem> getDetailItems() {
         return items;
-    }
-
-    private void initializeViews(){
-
     }
 }

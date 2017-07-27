@@ -21,6 +21,7 @@ import retrofit2.http.POST;
 
 public class RetrofitController {
     public static final String BASE_URL_API = "http://ads.appia.com";
+    public static final String TAG = "RETROFIT";
 
     static Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL_API)
@@ -43,14 +44,14 @@ public class RetrofitController {
                 if (response.errorBody() == null){
                     RxController.getController().notifyAdsReceived(response.body().getAds());
                 } else {
-                    Log.d("GetAdsCallError", "Code: " + response.code() + " " + response.message());
+                    Log.d(TAG, "GetAdsCallError Code: " + response.code() + " " + response.message());
                     RxController.getController().notifyAdsReceived(null);
                 }
             }
 
             @Override
             public void onFailure(Call<Ads> call, Throwable t) {
-                Log.d("GetAdsCallFailure", t.getMessage());
+                Log.d(TAG, "GetAdsCallFailure " + t .getMessage());
             }
         });
     }

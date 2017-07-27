@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenter;
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
-import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImpl;
 import com.johnriggs.digitalturbine.horizontal.base.view.BaseView;
 
 /**

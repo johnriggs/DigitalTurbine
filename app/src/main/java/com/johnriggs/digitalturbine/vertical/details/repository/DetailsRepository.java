@@ -11,4 +11,5 @@ import org.json.JSONObject;
 
 public interface DetailsRepository extends BaseRepository{
     String getJsonFromAd(String appId);
+    String getJsonParseErrorMessage();
 }

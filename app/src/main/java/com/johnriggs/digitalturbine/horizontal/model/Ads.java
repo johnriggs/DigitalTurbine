@@ -6,9 +6,6 @@ import org.simpleframework.xml.Root;
 
 import java.util.List;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-
 /**
  * Created by johnriggs on 7/25/17.
  */

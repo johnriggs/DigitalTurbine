@@ -2,5 +2,6 @@
     <string name="ad_rating_title">User Rating:</string>
     <string name="ads_failed_toast">Something went wrong retrieving the list of ads.</string>
     <string name="app_name">Digital Turbine</string>
+    <string name="json_parse_error">There was an error parsing the data for this item</string>
     <string name="riggs">Riggs</string>
 </resources>

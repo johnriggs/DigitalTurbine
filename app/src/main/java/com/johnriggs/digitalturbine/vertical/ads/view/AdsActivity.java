@@ -9,20 +9,15 @@ import android.widget.Toast;
 
 import com.johnriggs.digitalturbine.R;
 import com.johnriggs.digitalturbine.horizontal.base.view.BaseActivity;
-import com.johnriggs.digitalturbine.horizontal.controllers.RetrofitController;
-import com.johnriggs.digitalturbine.horizontal.model.Ad;
-import com.johnriggs.digitalturbine.horizontal.model.Ads;
 import com.johnriggs.digitalturbine.horizontal.utils.Constants;
 import com.johnriggs.digitalturbine.vertical.ads.presenter.AdsPresenter;
 import com.johnriggs.digitalturbine.vertical.ads.presenter.AdsPresenterImpl;
 import com.johnriggs.digitalturbine.vertical.ads.repository.AdsRepositoryImpl;
 import com.johnriggs.digitalturbine.vertical.details.view.DetailsActivity;
 
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.functions.Action1;
 import rx.subscriptions.CompositeSubscription;
 
 
@@ -44,7 +39,6 @@ public class AdsActivity extends BaseActivity implements AdsView {
         ButterKnife.bind(this);
 
         presenter = new AdsPresenterImpl(new AdsRepositoryImpl());
-        presenter.setView(this);
     }
 
     @Override
@@ -53,11 +47,14 @@ public class AdsActivity extends BaseActivity implements AdsView {
 
         adsSubscription.add(presenter.getAdsReceivedSubject().subscribe(o -> {
             if (o == null){
-                presenter.onAdsFailed();
+                Toast.makeText(AdsActivity.this, getResources().getString(R.string.ads_failed_toast),
+                        Toast.LENGTH_LONG).show();
             } else {
                 presenter.onAdsReceived(o);
             }
         }));
+
+        presenter.setView(this);
     }
 
     @Override

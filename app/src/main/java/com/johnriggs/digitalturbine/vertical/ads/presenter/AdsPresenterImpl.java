@@ -1,14 +1,7 @@
 package com.johnriggs.digitalturbine.vertical.ads.presenter;
 
-import android.support.annotation.Nullable;
-import android.widget.Toast;
-
-import com.johnriggs.digitalturbine.R;
-import com.johnriggs.digitalturbine.horizontal.application.DTApp;
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
-import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenter;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
-import com.johnriggs.digitalturbine.horizontal.model.Ads;
 import com.johnriggs.digitalturbine.vertical.ads.repository.AdsRepository;
 import com.johnriggs.digitalturbine.vertical.ads.view.AdsView;
 
@@ -34,7 +27,7 @@ public class AdsPresenterImpl extends BasePresenterImpl implements AdsPresenter 
     public void setView(AdsView view){
         this.view = view;
 
-        initializeViews();
+        repo.getAdsFromApi();
     }
 
     @Override
@@ -43,12 +36,6 @@ public class AdsPresenterImpl extends BasePresenterImpl implements AdsPresenter 
 
         repo.saveAdsToRealm(ads);
         view.setupAdsRecyclerView();
-    }
-
-    @Override
-    public void onAdsFailed() {
-        Toast.makeText(DTApp.getApp(), DTApp.getApp().getResources().getString(R.string.ads_failed_toast),
-                Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -64,9 +51,5 @@ public class AdsPresenterImpl extends BasePresenterImpl implements AdsPresenter 
     @Override
     public PublishSubject<List<Ad>> getAdsReceivedSubject() {
         return repo.getAdsReceivedSubject();
-    }
-
-    private void initializeViews(){
-        repo.getAdsFromApi();
     }
 }
