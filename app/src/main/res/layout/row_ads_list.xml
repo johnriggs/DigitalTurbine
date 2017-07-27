@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/ads_list_padding"
+    android:layout_marginBottom="@dimen/ads_list_margin_bottom"
+    android:clickable="true"
+    android:background="@color/row_white"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/ad_thumbnail"
+        android:layout_width="@dimen/ads_thumnail"
+        android:layout_height="@dimen/ads_thumnail"
+        android:layout_centerVertical="true"/>
+    
+    <RelativeLayout
+        android:id="@+id/ad_summary_parent"
+        android:layout_toEndOf="@id/ad_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/ads_list_padding"
+        android:paddingEnd="@dimen/ads_list_padding">
+
+        <TextView
+            android:id="@+id/ad_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/ads_row_title"
+            android:textColor="@color/row_title_text"
+            android:layout_alignParentTop="true"/>
+
+        <View
+            android:id="@+id/ad_name_underscore"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thin_blue_line"
+            android:layout_below="@id/ad_name"
+            android:background="@color/row_blue_divider"/>
+
+        <LinearLayout
+            android:id="@+id/ad_rating_parent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ad_name_underscore"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/ad_rating_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/ads_row_rating"
+                android:textColor="@color/row_rating_text"
+                android:text="@string/ad_rating_title"/>
+            <ImageView
+                android:id="@+id/ad_rating"
+                android:layout_width="@dimen/ads_rating_image_width"
+                android:layout_height="@dimen/ads_rating_image_height"
+                android:layout_marginStart="@dimen/ads_list_margin_ratings_sides"
+                android:layout_marginEnd="@dimen/ads_list_margin_ratings_sides"/>
+            <TextView
+                android:id="@+id/ad_rating_numeral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/ads_row_rating"
+                android:textColor="@color/row_rating_text"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ad_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ad_rating_parent"
+            android:gravity="left"
+            android:textSize="@dimen/ads_row_description"
+            android:textColor="@color/row_description_text"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

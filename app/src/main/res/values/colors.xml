@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="detail_text">#FF555555</color>
+    <color name="row_white">#FFFFFFFF</color>
+    <color name="row_blue_divider">#FF1111FF</color>
+    <color name="row_title_text">#FF333333</color>
+    <color name="row_rating_text">#FF555555</color>
+    <color name="row_description_text">#FF888888</color>
+
+</resources>
