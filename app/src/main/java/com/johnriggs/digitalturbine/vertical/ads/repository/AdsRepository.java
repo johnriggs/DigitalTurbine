@@ -14,7 +14,6 @@ import rx.subjects.PublishSubject;
  */
 
 public interface AdsRepository extends BaseRepository{
-    void setPresenter(AdsPresenter presenter);
     void getAdsFromApi();
     void saveAdsToRealm(List<Ad> ads);
     PublishSubject<List<Ad>> getAdsReceivedSubject();

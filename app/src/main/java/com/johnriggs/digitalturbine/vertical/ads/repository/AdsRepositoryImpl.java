@@ -19,13 +19,6 @@ import rx.subjects.PublishSubject;
  */
 
 public class AdsRepositoryImpl extends BaseRepositoryImpl implements AdsRepository {
-    AdsPresenter presenter;
-
-    @Override
-    public void setPresenter(AdsPresenter presenter) {
-        this.presenter = presenter;
-    }
-
     @Override
     public void getAdsFromApi() {
         RetrofitController.getAds(DTApp.getApp().getResources().getString(R.string.riggs));

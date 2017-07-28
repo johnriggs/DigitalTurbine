@@ -21,7 +21,6 @@ public class AdsPresenterImpl extends BasePresenterImpl implements AdsPresenter 
 
     public AdsPresenterImpl(AdsRepository repo){
         this.repo = repo;
-        repo.setPresenter(this);
     }
 
     public void setView(AdsView view){
