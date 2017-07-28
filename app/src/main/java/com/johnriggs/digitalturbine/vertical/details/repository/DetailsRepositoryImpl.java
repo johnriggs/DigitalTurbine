@@ -5,8 +5,13 @@ import com.johnriggs.digitalturbine.R;
 import com.johnriggs.digitalturbine.horizontal.application.DTApp;
 import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImpl;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
+import com.johnriggs.digitalturbine.horizontal.utils.JsonToListHelper;
+import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import io.realm.Realm;
 
@@ -16,6 +21,20 @@ import io.realm.Realm;
 
 public class DetailsRepositoryImpl extends BaseRepositoryImpl implements DetailsRepository {
     @Override
+    public String getJsonParseErrorMessage() {
+        return DTApp.getApp().getResources().getString(R.string.json_parse_error);
+    }
+
+    @Override
+    public List<DetailItem> getDetailItems(String appId) {
+        try {
+        return JsonToListHelper.getDetailItemsFromJson(getJsonFromAd(appId));
+        } catch (JSONException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public String getJsonFromAd(String appId) {
         Realm realm = null;
         String jsonString = null;
@@ -32,10 +51,5 @@ public class DetailsRepositoryImpl extends BaseRepositoryImpl implements Details
         }
 
         return jsonString;
-    }
-
-    @Override
-    public String getJsonParseErrorMessage() {
-        return DTApp.getApp().getResources().getString(R.string.json_parse_error);
     }
 }

@@ -22,7 +22,7 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
     DetailsRepository repo;
     DetailsView view;
 
-    public DetailsPresenterImpl(DetailsRepositoryImpl repo){
+    public DetailsPresenterImpl(DetailsRepository repo){
         this.repo = repo;
     }
 
@@ -35,11 +35,7 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
     public void setAppId(String appId) {
         this.appId = appId;
 
-        try {
-            items = JsonToListHelper.getDetailItemsFromJson(repo.getJsonFromAd(appId));
-        } catch (JSONException e){
-            view.showToast(repo.getJsonParseErrorMessage());
-        }
+        items = repo.getDetailItems(appId);
 
         if (items != null){
             view.setupAdsRecyclerView();
