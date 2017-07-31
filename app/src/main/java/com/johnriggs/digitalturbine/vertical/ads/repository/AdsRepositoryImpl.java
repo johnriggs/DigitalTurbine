@@ -18,7 +18,7 @@ import rx.subjects.PublishSubject;
  * Created by johnriggs on 7/25/17.
  */
 
-public class AdsRepositoryImpl extends BaseRepositoryImpl implements AdsRepository {
+public class AdsRepositoryImpl implements AdsRepository {
     @Override
     public void getAdsFromApi() {
         RetrofitController.getAds(DTApp.getApp().getResources().getString(R.string.riggs));

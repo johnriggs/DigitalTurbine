@@ -19,7 +19,7 @@ import io.realm.Realm;
  * Created by johnriggs on 7/26/17.
  */
 
-public class DetailsRepositoryImpl extends BaseRepositoryImpl implements DetailsRepository {
+public class DetailsRepositoryImpl implements DetailsRepository {
     @Override
     public String getJsonParseErrorMessage() {
         return DTApp.getApp().getResources().getString(R.string.json_parse_error);

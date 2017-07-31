@@ -1,6 +1,9 @@
 package com.johnriggs.digitalturbine.vertical.details.presenter;
 
+import android.graphics.Typeface;
+
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
+import com.johnriggs.digitalturbine.horizontal.enums.FontType;
 import com.johnriggs.digitalturbine.horizontal.utils.JsonToListHelper;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
 import com.johnriggs.digitalturbine.vertical.details.repository.DetailsRepository;
@@ -15,7 +18,7 @@ import java.util.List;
  * Created by johnriggs on 7/26/17.
  */
 
-public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPresenter {
+public class DetailsPresenterImpl implements DetailsPresenter {
     String appId;
     List<DetailItem> items;
 
@@ -45,5 +48,10 @@ public class DetailsPresenterImpl extends BasePresenterImpl implements DetailsPr
     @Override
     public List<DetailItem> getDetailItems() {
         return items;
+    }
+
+    @Override
+    public Typeface getFont(FontType font) {
+        return view.getTypeface(font);
     }
 }

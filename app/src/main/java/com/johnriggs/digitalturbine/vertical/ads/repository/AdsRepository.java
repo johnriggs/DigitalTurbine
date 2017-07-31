@@ -13,7 +13,7 @@ import rx.subjects.PublishSubject;
  * Created by johnriggs on 7/25/17.
  */
 
-public interface AdsRepository extends BaseRepository{
+public interface AdsRepository {
     void getAdsFromApi();
     void saveAdsToRealm(List<Ad> ads);
     PublishSubject<List<Ad>> getAdsReceivedSubject();

@@ -8,6 +8,8 @@ import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImp
 import com.johnriggs.digitalturbine.horizontal.base.view.BaseView;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
 
+import java.lang.reflect.Type;
+
 /**
  * Created by johnriggs on 7/25/17.
  */
@@ -16,8 +18,8 @@ public class BasePresenterImpl implements BasePresenter {
     BaseRepository repo;
     BaseView view;
 
-    public BasePresenterImpl(){
-        repo = new BaseRepositoryImpl();
+    public BasePresenterImpl(BaseRepository repo){
+        this.repo = repo;
     }
 
     @Override
