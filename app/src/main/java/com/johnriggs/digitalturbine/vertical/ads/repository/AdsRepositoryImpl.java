@@ -2,12 +2,9 @@ package com.johnriggs.digitalturbine.vertical.ads.repository;
 
 import com.johnriggs.digitalturbine.R;
 import com.johnriggs.digitalturbine.horizontal.application.DTApp;
-import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImpl;
 import com.johnriggs.digitalturbine.horizontal.controllers.RetrofitController;
 import com.johnriggs.digitalturbine.horizontal.controllers.RxController;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
-import com.johnriggs.digitalturbine.horizontal.model.Ads;
-import com.johnriggs.digitalturbine.vertical.ads.presenter.AdsPresenter;
 
 import java.util.List;
 

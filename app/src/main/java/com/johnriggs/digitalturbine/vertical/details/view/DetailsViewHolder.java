@@ -3,16 +3,12 @@ package com.johnriggs.digitalturbine.vertical.details.view;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.johnriggs.digitalturbine.R;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
-import com.johnriggs.digitalturbine.horizontal.model.Ad;
-import com.johnriggs.digitalturbine.vertical.ads.presenter.AdsPresenter;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
 import com.johnriggs.digitalturbine.vertical.details.presenter.DetailsPresenter;
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

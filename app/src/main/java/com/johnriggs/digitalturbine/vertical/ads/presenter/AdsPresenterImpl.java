@@ -2,7 +2,6 @@ package com.johnriggs.digitalturbine.vertical.ads.presenter;
 
 import android.graphics.Typeface;
 
-import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
 import com.johnriggs.digitalturbine.horizontal.model.Ad;
 import com.johnriggs.digitalturbine.vertical.ads.repository.AdsRepository;

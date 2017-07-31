@@ -2,8 +2,6 @@ package com.johnriggs.digitalturbine.vertical.details.presenter;
 
 import android.graphics.Typeface;
 
-import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenter;
-import com.johnriggs.digitalturbine.horizontal.base.view.BaseView;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
 import com.johnriggs.digitalturbine.vertical.details.view.DetailsView;

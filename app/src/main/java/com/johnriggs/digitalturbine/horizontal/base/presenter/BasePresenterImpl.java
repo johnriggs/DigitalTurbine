@@ -4,11 +4,8 @@ import android.graphics.Typeface;
 
 import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenter;
 import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepository;
-import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepositoryImpl;
 import com.johnriggs.digitalturbine.horizontal.base.view.BaseView;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
-
-import java.lang.reflect.Type;
 
 /**
  * Created by johnriggs on 7/25/17.

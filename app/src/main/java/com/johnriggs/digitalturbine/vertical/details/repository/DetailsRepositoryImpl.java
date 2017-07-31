@@ -21,11 +21,6 @@ import io.realm.Realm;
 
 public class DetailsRepositoryImpl implements DetailsRepository {
     @Override
-    public String getJsonParseErrorMessage() {
-        return DTApp.getApp().getResources().getString(R.string.json_parse_error);
-    }
-
-    @Override
     public List<DetailItem> getDetailItems(String appId) {
         try {
         return JsonToListHelper.getDetailItemsFromJson(getJsonFromAd(appId));

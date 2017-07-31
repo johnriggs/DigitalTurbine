@@ -1,10 +1,6 @@
 package com.johnriggs.digitalturbine.vertical.details.repository;
 
-import com.johnriggs.digitalturbine.horizontal.base.repository.BaseRepository;
-import com.johnriggs.digitalturbine.horizontal.model.Ad;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
-
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -13,6 +9,5 @@ import java.util.List;
  */
 
 public interface DetailsRepository {
-    String getJsonParseErrorMessage();
     List<DetailItem> getDetailItems(String appId);
 }

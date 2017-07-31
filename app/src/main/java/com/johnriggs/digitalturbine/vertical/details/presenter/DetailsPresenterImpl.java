@@ -2,15 +2,10 @@ package com.johnriggs.digitalturbine.vertical.details.presenter;
 
 import android.graphics.Typeface;
 
-import com.johnriggs.digitalturbine.horizontal.base.presenter.BasePresenterImpl;
 import com.johnriggs.digitalturbine.horizontal.enums.FontType;
-import com.johnriggs.digitalturbine.horizontal.utils.JsonToListHelper;
 import com.johnriggs.digitalturbine.vertical.details.model.DetailItem;
 import com.johnriggs.digitalturbine.vertical.details.repository.DetailsRepository;
-import com.johnriggs.digitalturbine.vertical.details.repository.DetailsRepositoryImpl;
 import com.johnriggs.digitalturbine.vertical.details.view.DetailsView;
-
-import org.json.JSONException;
 
 import java.util.List;
 
